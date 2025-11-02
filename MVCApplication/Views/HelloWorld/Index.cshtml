@@ -1,0 +1,26 @@
+﻿@model List<MVCApplication.Models.Dog>
+
+@{
+    ViewData["Title"] = "Dog list";
+}
+
+<h2>Dog list</h2>
+
+@if (Model.Count == 0)
+{
+    <p>No dogs yet. <a asp-action="Create">Add one!</a></p>
+}
+else
+{
+    <ul>
+        @foreach (var dog in Model)
+        {
+            <li>@dog.Name - @dog.Age</li>
+        }
+    </ul>
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create dog</a>
+</p>
+
